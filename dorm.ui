@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>474</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DormHelper - Приложение для общежития</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 #667eea, stop: 0.5 #764ba2, stop: 1 #f093fb);
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif;
+}
+
+QTabWidget::pane {
+    border: 2px solid #ffffff;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 12px;
+    margin: 8px;
+    padding: 4px;
+}
+
+QTabWidget::tab-bar {
+    alignment: center;
+}
+
+QTabBar::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #6a11cb, stop: 1 #2575fc);
+    color: white;
+    border: 1px solid #5d00ff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: none;
+    min-width: 120px;
+    padding: 12px 16px;
+    margin: 2px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+QTabBar::tab:selected {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ffffff, stop: 1 #f8f9fa);
+    color: #2c3e50;
+    border-color: #3498db;
+    font-weight: bold;
+}
+
+QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #8e2de2, stop: 1 #4a00e0);
+}
+
+QLabel {
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 4px;
+}
+
+QPushButton {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #667eea, stop: 1 #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 20px;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #764ba2, stop: 1 #667eea);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #5a3d8a, stop: 1 #4a2c6d);
+}
+
+QGroupBox {
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid #bdc3c7;
+    border-radius: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #2c3e50;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #667eea, stop: 1 #764ba2);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 6px;
+    margin-top: -8px;
+}
+
+QListWidget, QTableWidget, QTreeWidget, QTextBrowser, QTextEdit, QLineEdit {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    padding: 6px;
+    font-size: 12px;
+    color: #2c3e50;
+    selection-background-color: #3498db;
+    selection-color: white;
+}
+
+QListWidget::item:hover, QTreeWidget::item:hover {
+    background: #ecf0f1;
+    border-radius: 4px;
+}
+
+QComboBox {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #2c3e50;
+    min-width: 120px;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #667eea;
+    width: 0px;
+    height: 0px;
+}
+
+QComboBox QAbstractItemView {
+    background: white;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    selection-background-color: #3498db;
+    font-size: 12px;
+}
+
+QHeaderView::section {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #667eea, stop: 1 #764ba2);
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+}
+
+QStatusBar {
+    background: rgba(255, 255, 255, 0.9);
+    color: #2c3e50;
+    font-size: 11px;
+    border-top: 1px solid #bdc3c7;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+     <widget class="QWidget" name="news_tab">
+    <attribute name="title">
+        <string>📢 Новости и объявления</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+            <widget class="QSplitter" name="newsSplitter">
+                <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                </property>
+                <widget class="QListView" name="newsList">
+                    <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                            <horstretch>0</horstretch>
+                            <verstretch>1</verstretch>
+                        </sizepolicy>
+                    </property>
+                </widget>
+                <widget class="QTextBrowser" name="newsContent">
+                    <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                            <horstretch>0</horstretch>
+                            <verstretch>1</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>16777215</width>
+                            <height>200</height>
+                        </size>
+                    </property>
+                    <property name="html">
+                        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#7f8c8d;&quot;&gt;Выберите новость для просмотра...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                </widget>
+            </widget>
+        </item>
+        <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+                <item>
+                    <widget class="QPushButton" name="refreshNewsBtn">
+                        <property name="text">
+                            <string>🔄 Обновить новости</string>
+                        </property>
+                    </widget>
+                </item>
+                <item>
+                    <spacer name="horizontalSpacer">
+                        <property name="orientation">
+                            <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                            <size>
+                                <width>40</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </item>
+            </layout>
+        </item>
+    </layout>
+</widget>
+      <widget class="QWidget" name="requests_tab">
+       <attribute name="title">
+        <string>🔧 Заявки и обращения</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QFormLayout" name="formLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Тип заявки:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="requestType">
+            <item>
+             <property name="text">
+              <string>Ремонт в комнате</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Сантехника</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Электрика</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Мебель</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Уборка</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Другое</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Описание проблемы:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QTextEdit" name="requestDescription"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Комната:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="roomNumber"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="submitRequestBtn">
+          <property name="text">
+           <string>📨 Отправить заявку</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>📋 История моих заявок</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QTableWidget" name="myRequestsTable">
+             <column>
+              <property name="text">
+               <string>ID</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Тип</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Статус</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Дата</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="handbook_tab">
+       <attribute name="title">
+        <string>📚 Справочник</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QTreeWidget" name="handbookTree">
+          <column>
+           <property name="text">
+            <string>Разделы</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextBrowser" name="handbookContent"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="profile_tab">
+       <attribute name="title">
+        <string>👤 Личный кабинет</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QGroupBox" name="studentInfoGroup">
+          <property name="title">
+           <string>🎓 Информация о студенте</string>
+          </property>
+          <layout class="QFormLayout" name="formLayout_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>ФИО:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="studentName"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>Комната:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="studentRoom"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Этаж:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="studentFloor"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="neighborsGroup">
+          <property name="title">
+           <string>👥 Соседи по комнате</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QListWidget" name="neighborsList"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">color: #2c3e50; font-weight: bold;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
