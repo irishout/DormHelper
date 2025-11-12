@@ -166,6 +166,11 @@ class DormHelper(QMainWindow):
             # Date — display created_at or empty
             created = r.get("created_at") or ""
             table.setItem(row, 3, QTableWidgetItem(created))
+            # description
+            table.setItem(row, 4, QTableWidgetItem(r.get("description")))
+            # room
+            table.setItem(row, 5, QTableWidgetItem(r.get("room")))
+
 
         self.statusBar().showMessage(f"Заявки загружены: {len(rows)}")
 
