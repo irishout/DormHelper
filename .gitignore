@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.sqlite3
+*.db
+dormhelper.db

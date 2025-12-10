@@ -19,14 +19,6 @@ import database
 
 
 class DormHelper(QMainWindow):
-    """Main application window wiring UI to the database layer.
-
-    Implemented features:
-    - Load and display news list + content
-    - Submit maintenance requests and show them in the requests table
-    - Load handbook tree and display selected content
-    - Basic profile: show neighbors for a specified room (if any)
-    """
 
     def __init__(self):
         super().__init__()
@@ -131,6 +123,15 @@ class DormHelper(QMainWindow):
         if not description:
             self.statusBar().showMessage("Описание заявки пустое — заполните поле.")
             return
+
+        if not room:
+            self.statusBar().showMessage("Впишите номер комнаты")
+            return
+        
+        if int(room) < 1:
+            self.statusBar().showMessage("Номер комнаты должен быть положительным")
+            return
+
 
         try:
             req_id = self.db.add_request(requester_name, request_type, description, room)
